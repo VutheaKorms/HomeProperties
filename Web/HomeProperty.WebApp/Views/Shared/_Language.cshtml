@@ -1,0 +1,42 @@
+﻿
+@{
+    var culture = string.Empty;
+    var cookie = Request.Cookies["_culture"];
+    if (cookie != null) { culture = cookie.Value; }
+    if (string.IsNullOrEmpty(culture))
+    {
+        culture = System.Threading.Thread
+       .CurrentThread.CurrentUICulture
+       .Name.ToLowerInvariant();
+    }
+    var currentUrl = HttpContext.Current.Request.Url.AbsolutePath;
+}
+@helper selected(string c, string culture)
+{
+    if (c == culture)
+    {
+        @:checked="checked"
+    }
+}
+@using (Html.BeginForm("SetCulture", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <fieldset>
+        <div class="control-group">
+            <div class="controls">
+                <label for="en-us">
+                    <input name="culture" id="en-us" value="en-us" type="radio" @selected("en-us", culture) /> English
+                </label>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <label for="es">
+                    <input name="culture" id="km-KH" value="km-KH" type="radio" @selected("km-KH", culture) /> Khmer
+                </label>
+            </div>
+        </div>
+        @Html.Hidden("currentUrl", @currentUrl)
+    </fieldset>
+}
+@Scripts.Render("~/bundles/language")
+

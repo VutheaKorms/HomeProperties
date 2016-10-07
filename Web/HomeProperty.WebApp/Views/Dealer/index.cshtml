@@ -1,0 +1,177 @@
+﻿
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+
+
+
+
+<div id="body">
+    <table>
+        <tr>
+            <td>
+                <label for="autocomplete-textbox">Enter User Name : </label>
+            </td>
+            <td style="text-align: left">
+                <input type="text" id="txtName" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <label id="lblMessage" style="color: red;"></label>
+            </td>
+            <td style="text-align: left">
+                <label id="lblSelectedVal" style="color: magenta;"></label>
+            </td>
+        </tr>
+    </table>
+</div>  
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#txtName').autocomplete({
+            source: function (request, response) {
+                var autocompleteUrl = 'api/states' + '?searchText=' + request.term;
+                $.ajax({
+                    url: autocompleteUrl,
+                    type: 'GET',
+                    cache: false,
+                    dataType: 'json',
+                    success: function (json) {
+                        response($.map(json, function (data, id) {
+                            return {
+                                label: data.Name,
+                                value: data.Name
+                            };
+                        }));
+                    },
+                    error: function (xmlHttpRequest, textStatus, errorThrown) {
+                        console.log('some error occured', textStatus, errorThrown);
+                    }
+                });
+            },
+            minLength: 1,
+            select: function (event, ui) {
+                lblMessage.innerText = "Your Selected Name :";
+                lblSelectedVal.innerText = ui.item.label;
+                $('#txtName').val(ui.item.label);
+                return false;
+            }
+        });
+    });
+</script>  
+
+
+
+
+
+
+
+<h2>Find Local Dealer</h2>
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <form id="dealerForm">
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <select class="form-control" id="makes" name="makes"
+                    data-bind="options: makes,
+                    optionsText: 'Name', value: 'makeId',
+                    optionsValue: 'Id',
+                    optionsCaption: '---Any Make--'">
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="text" value="" id="keyword" class="form-control" placeholder="Keyword" />
+            </div>
+            <div class="form-group">
+                <input type="text" id="tag"  class="form-control" placeholder="Location"/>           
+            </div>
+            
+            <button type="submit" name="submitdealerForm" id="submitdealerForm"
+                    class="btn btn-success btn-lg btn-block"
+                    title=''>
+                Search
+            </button>
+        </form>
+        <br /><br />
+        <p>
+            Search dealer and dealership with form above <br />
+            1. Select make of vehicles <br />
+            2. Input dealer name , dealership name or any....<br />
+            3. Input dealer location , city ,....
+        </p>
+
+    </div>
+    <div class="col-md-8">
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/Dealer.Index")
+@Scripts.Render("~/bundles/Jquery.Ui")
+@Styles.Render("~/Content/jquery-ui.css")
+
+<script>
+
+ $(document).ready(function () {
+    $('#tag').autocomplete(
+       {
+          source: '@Url.Action("Autocompleted", "Dealer")'
+       });
+ })
+
+</script>
+
+
+
+<div id="body">
+    <label for="autocomplete-textbox">Search : </label>
+    <input type="text" id="autocomplete-textbox" />
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function (){
+$('#autocomplete-textbox').autocomplete({
+    source: function (request, response) {
+        var autocompleteUrl = '/Dealer/States' + '?query=' + request.term;
+        $.ajax({
+            url: autocompleteUrl,
+            type: 'GET',
+            cache: false,
+            dataType: 'json',
+            success: function (json) {
+                // call autocomplete callback method with results
+                response($.map(json, function (data, id) {
+                    return {
+                        label: data.Name,
+                        value: data.Id
+                    };
+                }));
+            },
+            error: function (xmlHttpRequest, textStatus, errorThrown) {
+                console.log('some error occured', textStatus, errorThrown);
+            }
+        });
+    },
+    minLength: 2,
+    select: function (event, ui) {
+        alert('you have selected ' + ui.item.label + ' ID: ' + ui.item.value);
+        $('#autocomplete-textbox').val(ui.item.label);
+        return false;
+    }
+});
+});
+</script>
+

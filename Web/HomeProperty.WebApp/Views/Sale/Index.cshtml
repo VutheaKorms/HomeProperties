@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = Resources.Home_Sale;
+}
+
+<div class="row">
+    <h3>@Resources.Home_Sale</h3>
+    <h4>Select Your Ad.</h4>
+
+    <div class="col-md-2">
+        <ul class="nav nav-tabs tabs-left" role="tablist" id="adTab">
+            <li class="active"><a href="#premier" role="tab" data-toggle="tab">Premier</a></li>
+            <li><a href="#deluxe" role="tab" data-toggle="tab">Deluxe</a></li>
+            <li><a href="#enhanced" role="tab" data-toggle="tab">Enhanced</a></li>
+            <li><a href="#standard" role="tab" data-toggle="tab">Standard</a></li>
+        </ul>
+    </div>
+    <div class="col-md-10">
+        <div class="tab-content">
+            <div class="tab-pane active" id="premier">
+                <h3>Get more photos, Run 'til It Sells and a Featured Spotlight listing.</h3>
+                <h4>Features</h4>
+                <ul>                   
+                    <li>Run 'til It Sells</li>
+                    <li>18 Online Photos</li>
+                    <li>Featured Listing</li>
+                    <li>Featured Spotlight for 14 days</li>
+                    <li>Privacy Email</li>
+                </ul>
+                <a class="btn btn-primary" href="@Url.Action("Index","Sale")">Select</a>
+                <div>@Html.ActionLink("View more features", "Index", "Sale")</div>              
+            </div>
+            <div class="tab-pane fade" id="deluxe">
+                <h1>Hello</h1>
+            </div>
+            <div class="tab-pane fade" id="enhanced">
+                <h1>Hello2</h1>
+            </div>
+            <div class="tab-pane fade" id="standard">
+                <h1>Hello3</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts { @Scripts.Render("~/bundles/jqueryval") }

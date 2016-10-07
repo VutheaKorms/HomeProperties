@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9FE3A8C-F312-45FE-B1EF-1D0536EC7608}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HomeProperty.View</RootNamespace>
+    <AssemblyName>HomeProperty.View</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentValidation">
+      <HintPath>..\..\packages\FluentValidation.5.6.2.0\lib\Net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppValidator\ApplicationViewValidator.cs" />
+    <Compile Include="AppValidator\MenuChildItemViewValidator.cs" />
+    <Compile Include="AppValidator\MenuItemViewValidator.cs" />
+    <Compile Include="AppValidator\MenuViewValidator.cs" />
+    <Compile Include="AppValidator\ResourceViewValidator.cs" />
+    <Compile Include="AppValidator\LanguageViewValidator.cs" />
+    <Compile Include="App\ApplicationView.cs" />
+    <Compile Include="App\LanguageView.cs" />
+    <Compile Include="App\MenuChildItemView.cs" />
+    <Compile Include="App\MenuItemView.cs" />
+    <Compile Include="App\MenuView.cs" />
+    <Compile Include="App\ResourceView.cs" />
+    <Compile Include="BaseView.cs" />
+    <Compile Include="ContactValidator\EmailTypeViewValidator.cs" />
+    <Compile Include="ContactValidator\EmailViewValidator.cs" />
+    <Compile Include="Contact\EmailTypeView.cs" />
+    <Compile Include="Contact\EmailView.cs" />
+    <Compile Include="ErrorValidator\ErrorLogViewValidator.cs" />
+    <Compile Include="Error\ErrorLogView.cs" />
+    <Compile Include="Flexible\FlexibleView.cs" />
+    <Compile Include="Hypermedia\Links\Edit.cs" />
+    <Compile Include="Hypermedia\Links\First.cs" />
+    <Compile Include="Hypermedia\Links\Last.cs" />
+    <Compile Include="Hypermedia\Links\Link.cs" />
+    <Compile Include="Hypermedia\Links\Next.cs" />
+    <Compile Include="Hypermedia\Links\Previous.cs" />
+    <Compile Include="Hypermedia\Links\Self.cs" />
+    <Compile Include="Hypermedia\Resource.cs" />
+    <Compile Include="Hypermedia\ResourceWrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryParameter\MenuItemQueryParameter.cs" />
+    <Compile Include="QueryParameter\MenuQueryParameter.cs" />
+    <Compile Include="QueryParameter\QueryParameterBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\HomeProperty.Settings\HomeProperty.Settings.csproj">
+      <Project>{97cad696-4d2f-47ea-bb20-80456ad84a6f}</Project>
+      <Name>HomeProperty.Settings</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

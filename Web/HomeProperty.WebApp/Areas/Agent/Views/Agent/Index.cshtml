@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Agent";
+    Layout = "~/Areas/Agent/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Agent</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfill -->
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"></script>
+    <script src="https://npmcdn.com/angular2@2.0.0-beta.13/es6/dev/src/testing/shims_for_IE.js"></script>*@
+
+    @*<script src="https://code.angularjs.org/2.0.0-beta.13/angular2-polyfills.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.13/Rx.umd.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.13/angular2-all.umd.dev.js"></script>*@
+    <!-- 2. Load our 'modules' -->
+    @*<script src='~/Scripts/app/angular2/main.js'></script>*@
+    <script src="~/Scripts/app/angular2/angular2-polyfills.js"></script>
+    <script src="~/Scripts/app/angular2/Rx.umd.js"></script>
+    <script src="~/Scripts/app/angular2/angular2-all.umd.dev.js"></script>
+
+
+    <script src="~/Scripts/Angular2/Agent/app/service/MenuService.js"></script>
+    <script src="~/Scripts/Angular2/Agent/app/component/MenuComponent.js"></script>
+
+</head>
+<!-- 3. Display the application -->
+<body>
+    <div id="menu-listing">Loading...</div>
+</body>
+</html>
+<!--
+    This is a demo for an answer at stackoverflow: http://stackoverflow.com/a/36346877/1850609
+-->

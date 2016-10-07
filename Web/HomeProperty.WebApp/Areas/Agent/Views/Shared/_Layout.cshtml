@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html ng-app="">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" /> <!-- To be populated -->
+    <meta name="description" content="" /><!-- To be populated -->
+    <meta name="author" content="khsoft" />
+    <meta name="copyright" content="&copy, 2016" />
+
+    
+    @Styles.Render("~/Content/css")
+    @*@Styles.Render("~/Content/loadingBar")*@
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/buy/bootstrap")
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Home Property", "Index", "Home", new { area = "" },
+                        new { @class = "navbar-brand logo" })
+            </div>
+
+            <div class="collapse navbar-collapse" id="nav-navbar-collapse">               
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        @Html.Partial("_FooterPartialView")
+        <br />
+        @*@Html.Partial("_Language")*@
+        <br />
+    </div>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

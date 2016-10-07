@@ -1,0 +1,231 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+@*<div class="row">
+    <div class="col-md-12">
+        <!-- Basic search form -->
+        <form id="basicCarSearchForm">
+            <h3>Search Cars for Sale</h3>
+            @Html.AntiForgeryToken()
+            <label>Condition</label>
+            <div class="form-group">
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> New
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Used
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Certified
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" checked name="inlineRadioOptions" id="inlineRadio4" value="option4"> All
+                </label>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <select class="form-control">
+                        <option selected>Any Make</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <select class="form-control">
+                        <option selected>Any Model</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <select class="form-control">
+                        <option selected>Any Price</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <select class="form-control">
+                        <option selected>Any Year</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="">Within</label>
+                    <select class="form-control">
+                        <option selected>50 Miles</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                    <label>Of </label>
+                    <input type="text" name="location" id="location" class="form-control" placeholder="Location" />
+                </div>
+            </div>
+            <button class="btn btn-primary">Search</button>
+            <a href="~/Home/Search" style="margin-left:50px;">More Options</a>
+        </form>
+        <br />
+        <fieldset><legend></legend></fieldset>
+        <!--Browse cars -->
+        <h3>Browse by Make</h3> <br />
+        <div class="row">
+            <div class="form-group col-md-2">
+                <a href="#">Acura</a> <br /><br />
+                <a href="#">Alfa Romeo</a> <br /><br />
+                <a href="#">AMC</a> <br /><br />
+                <a href="#">Aston Martin</a> <br /><br />
+                <a href="#">Audi</a> <br /><br />
+                <a href="#">Bentley</a> <br /><br />
+                <a href="#">BMW</a> <br /><br />
+                <a href="#">Buick</a> <br /><br />
+                <a href="#">Cadillac</a> <br /><br />
+                <a href="#">Chevrolet</a> <br /><br />
+                <a href="#">Chrysler</a> <br /><br />
+                <a href="#">Daewoo</a> <br /><br />
+                <a href="#">Datsun</a> <br /><br />
+            </div>
+            <div class="form-group col-md-2">
+                <a href="#">DeLorean</a> <br /><br />
+                <a href="#">Dodge</a> <br /><br />
+                <a href="#">Eagle</a> <br /><br />
+                <a href="#">Ferrari</a> <br /><br />
+                <a href="#">Fiat</a> <br /><br />
+                <a href="#">Fisker</a> <br /><br />
+                <a href="#">Ford</a> <br /><br />
+                <a href="#">Freightliner</a> <br /><br />
+                <a href="#">Geo</a> <br /><br />
+                <a href="#">GMC</a> <br /><br />
+                <a href="#">Honda</a> <br /><br />
+                <a href="#">Hummer</a> <br /><br />
+                <a href="#">Hyundai</a> <br /><br />
+            </div>
+            <div class="form-group col-md-2">
+                <a href="#">Infiniti</a> <br /><br />
+                <a href="#">Isuzu</a> <br /><br />
+                <a href="#">Jaguar</a> <br /><br />
+                <a href="#">Jeep</a> <br /><br />
+                <a href="#">Kia</a> <br /><br />
+                <a href="#">Lamborghini</a> <br /><br />
+                <a href="#">Land Rover</a> <br /><br />
+                <a href="#">Lexus</a> <br /><br />
+                <a href="#">Lincoln</a> <br /><br />
+                <a href="#">Lotus</a> <br /><br />
+                <a href="#">Maserati</a> <br /><br />
+                <a href="#">Maybach</a> <br /><br />
+                <a href="#">Mazda</a> <br /><br />
+            </div>
+        </div>
+
+        <h3>Browse by Style</h3> <br />
+        <div class="row">
+            <div class="form-group col-md-2">
+                <a href="#">AWD/4WD</a> <br /><br />
+                <a href="#">Commercial</a> <br /><br />
+                <a href="#">Convertible</a> <br /><br />
+                <a href="#">Coupe</a> <br /><br />
+                <a href="#">Hatchback</a> <br /><br />
+                <a href="#">Hybrid/Electric</a> <br /><br />
+            </div>
+            <div class="form-group col-md-2">
+                <a href="#">Luxury</a> <br /><br />
+                <a href="#">Sedan</a> <br /><br />
+                <a href="#">SUV/Crossover</a> <br /><br />
+                <a href="#">Truck</a> <br /><br />
+                <a href="#">Van/Minivan</a> <br /><br />
+                <a href="#">Wagon</a> <br /><br />
+            </div>
+        </div>
+
+        <h3>Browse by Location</h3> <br />
+        <div class="row">
+            <div class="form-group col-md-2">
+                <a href="#">Phnom Penh</a> <br /><br />
+                <a href="#">Kompong Thom</a> <br /><br />
+                <a href="#">Kompong Chhnang</a> <br /><br />
+                <a href="#">Siem Reap</a> <br /><br />
+                <a href="#">KomPot</a> <br /><br />
+                <a href="#">Kompong Spur</a> <br /><br />
+            </div>
+            <div class="form-group col-md-2">
+                <a href="#">Kosh Kong</a> <br /><br />
+                <a href="#">Svay Reang</a> <br /><br />
+                <a href="#">Kep</a> <br /><br />
+                <a href="#">Ratanakiri</a> <br /><br />
+                <a href="#">Mondulkiri</a> <br /><br />
+                <a href="#">Battombong</a> <br /><br />
+            </div>
+            <div class="form-group col-md-2">
+                <a href="#">Banteay Meanchey</a> <br /><br />
+                <a href="#">Oddar Meanchey</a> <br /><br />
+                <a href="#">Preah Vihear</a> <br /><br />
+                <a href="#">Kratie</a> <br /><br />
+                <a href="#">Prey Veng</a> <br /><br />
+                <a href="#">Takeo</a> <br /><br />
+            </div>
+        </div>
+
+        <!--Car deals-->
+        <!--Cars on Map-->
+    </div>
+</div>*@
+
+@Scripts.Render("~/bundles/Home.Index")
+
+<!--
+    There will be threes main presentations:
+    1. Search
+       The search form will sit on top of nice background.
+       The search in home page is the basic search. We provide an option for the user
+       who is interested in advanced search.
+       We will have search form that contains the following search criteria:
+       - Car conditions: New, Used, Pre-owned Certified, All
+       - Make
+       - Model
+       - Price
+       - Distance in Miles or Kilometers
+       - Location/Zip Code
+       The design of the form is
+       --------------------------------------------------------------------
+       * Condition: - required
+       [New] [Used] [Certified] [All]
+       * Location:
+       Within [Distance] of [Search By Address, City, Zip]
+       * Make [Any Make]
+       * Model [Any Model]
+       * Any Price [Price Range]
+       * Any Year  [Year Range]
+       I will adopt the search filters like those of http://www.realtor.com/realestateandhomes-search/28210
+       --------------------------------------------------------------------
+    2. Browse
+        By Body Style
+        By Make
+        By Model
+        By Locations
+        By Price
+        By Colors
+
+    3. Deals
+        Displaying significantly disocunted cars to the users
+
+    4. Maps
+       Displaying cars on the maps according to the user's location.
+-->

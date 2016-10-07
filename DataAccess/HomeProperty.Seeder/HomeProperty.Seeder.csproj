@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E13AFFFA-C45D-458D-9168-7B2E59F547A7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HomeProperty.Seeder</RootNamespace>
+    <AssemblyName>HomeProperty.Seeder</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CsvHelper.2.16.0.0\lib\net45\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Client.BaseTypes">
+      <HintPath>..\AutoMarketPlace.EF\bin\Debug\NuGet.Client.BaseTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Versioning">
+      <HintPath>..\AutoMarketPlace.EF\bin\Debug\NuGet.Versioning.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Migrations\SeedingData\Color\Color1981.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1982.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1983.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1984.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1985.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1986.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1987.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1988.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1989.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1990.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1991.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1992.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1993.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1994.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1995.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1996.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1997.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1998.csv" />
+    <None Include="Migrations\SeedingData\Color\Color1999.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2000.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2001.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2002.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2003.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2004.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2005.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2006.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2007.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2008.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2009.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2010.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2011.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2012.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2013.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2014.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2015.csv" />
+    <None Include="Migrations\SeedingData\Color\Color2016.csv" />
+    <None Include="Migrations\SeedingData\Makes.csv" />
+    <None Include="Migrations\SeedingData\ModelGroups.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1981.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1982.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1983.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1984.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1985.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1986.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1987.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1988.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1989.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1990.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1991.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1992.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1993.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1994.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1995.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1996.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1997.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1998.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup1999.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2000.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2001.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2002.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2003.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2004.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2005.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2006.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2007.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2008.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2009.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2010.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2011.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2012.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2013.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2014.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2015.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroupModel\ModelGroup2016.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1981.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1982.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1983.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1984.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1985.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1986.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1987.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1988.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1989.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1990.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1991.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1992.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1993.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1994.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1995.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1996.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1997.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1998.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup1999.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2000.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2001.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2016.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2002.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2003.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2004.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2005.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2006.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2007.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2008.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2009.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2010.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2011.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2012.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2013.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2014.csv" />
+    <None Include="Migrations\SeedingData\YearModelGroup\YearModelGroup2015.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1981.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1982.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1983.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1984.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1985.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1986.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1987.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1988.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1989.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1990.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1991.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1992.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1993.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1994.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1995.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1996.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1997.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1998.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim1999.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2000.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2001.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2002.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2003.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2004.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2005.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2006.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2007.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2008.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2009.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2010.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2011.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2012.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2013.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2014.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2015.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMMT\YearMakeModelTrim2016.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1981.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1982.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1983.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1984.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1985.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1986.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1987.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1988.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1989.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1990.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1991.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1992.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1993.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1994.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1995.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1996.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1997.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1998.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel1999.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2000.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2001.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2002.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2003.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2004.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2005.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2006.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2007.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2008.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2009.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2010.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2011.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2012.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2013.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2014.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2015.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YMM\YearMakeModel2016.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1981.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1982.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1983.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1984.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1985.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1986.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1987.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1988.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1989.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1990.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1991.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1992.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1993.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1994.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1995.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1996.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1997.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1998.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake1999.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2000.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2001.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2002.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2003.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2004.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2005.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2006.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2007.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2008.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2009.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2010.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2011.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2012.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2013.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2014.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2015.csv" />
+    <None Include="Migrations\SeedingData\YMMTByYears\YM\YearMake2016.csv" />
+    <None Include="Migrations\SeedingData\YMMT\YearMakeModels.csv" />
+    <None Include="Migrations\SeedingData\YMMT\YearMakeModelTrims.csv" />
+    <None Include="Migrations\SeedingData\YMMT\YearMakes.csv" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\HomeProperty.Settings\HomeProperty.Settings.csproj">
+      <Project>{97cad696-4d2f-47ea-bb20-80456ad84a6f}</Project>
+      <Name>HomeProperty.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HomeProperty.EF\HomeProperty.EF.csproj">
+      <Project>{7875a766-b19f-41f3-ad36-ad17647816db}</Project>
+      <Name>HomeProperty.EF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
