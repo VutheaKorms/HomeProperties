@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="">
+<html>
 <head>
     <!-- Meta -->
     <meta charset="utf-8" />
@@ -10,46 +10,61 @@
     <meta name="author" content="khsoft" />
     <meta name="copyright" content="&copy, 2016" />
 
+    @*<title>@ViewBag.Title - @Resources.App_WebAppName</title>*@
+    <title>Home Property</title>
 
     @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/loadingBar")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/buy/bootstrap")
-   
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquerytemplate")
+    @Scripts.Render("~/bundles/app")
 
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-navbar-collapse">
+                <button type="button" class="navbar-toggle"
+                        data-toggle="collapse" data-target="#nav-navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Home Property", "Index", "Home", new { area = "" },
-                        new { @class = "navbar-brand logo" })
+                @Html.ActionLink("Home Property", "Index", "Home", new { area = "" }, new { @class = "navbar-brand logo" })
+
+                @*@Html.ActionLink(Resources.App_WebAppName, "Index", "Home", new {
+                    area = ""
+                    },
+                     new {
+                                @class = "navbar-brand logo"
+                            })*@
             </div>
 
-            
+            <div id="nav-navbar-collapse" style="">
+                <ul id="mainNavMenu" class="nav navbar-nav"></ul>
 
-            <div class="collapse navbar-collapse" id="nav-navbar-collapse">
-                @Html.Partial("_LoginPartial")
+                <script id="mainNavTemplate" type="text/x-jquery-tmpl">
+                    <li><a href='@Url.Content("${Url}")'>${Name}</a></li>
+                </script>
+
+
             </div>
+
+            @Html.Partial("_LoginPartial")
+
+
         </div>
     </nav>
-
     <div class="container body-content">
         @RenderBody()
         @Html.Partial("_FooterPartialView")
         <br />
         @*@Html.Partial("_Language")*@
         <br />
+
     </div>
-
     @RenderSection("scripts", required: false)
-
 </body>
 </html>
