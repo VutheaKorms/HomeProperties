@@ -188,7 +188,7 @@
     </div>
 </div>*@
 
-@Scripts.Render("~/bundles/Home.Index")
+@*@Scripts.Render("~/bundles/Home.Index")*@
 
 <!--
     There will be threes main presentations:
@@ -229,3 +229,560 @@
     4. Maps
        Displaying cars on the maps according to the user's location.
 -->
+
+<body class="aa-price-range">
+    <!-- Pre Loader -->
+    <div id="aa-preloader-area">
+        <div class="pulse"></div>
+    </div>
+    <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
+    <!-- END SCROLL TOP BUTTON -->
+    <!-- Start header section -->
+    <header id="aa-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-header-area">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="aa-header-left">
+                                    <div class="aa-telephone-no">
+                                        <span class="fa fa-phone"></span>
+                                        1-900-523-3564
+                                    </div>
+                                    <div class="aa-email hidden-xs">
+                                        <span class="fa fa-envelope-o"></span> info@markups.com
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="aa-header-right">
+                                    <a href="register.html" class="aa-register">Register</a>
+                                    <a href="signin.html" class="aa-login">Login</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End header section -->
+  
+    <!-- Start slider  -->
+    <section id="aa-slider">
+        <div class="aa-slider-area">
+            <!-- Top slider -->
+            <div class="aa-top-slider">
+                <!-- Top slider single slide -->
+                <div class="aa-top-slider-single">
+                    <img src="~/img/Home/2.jpg" alt="img">
+                </div>
+                <!-- / Top slider single slide -->
+                <!-- Top slider single slide -->
+                <div class="aa-top-slider-single">
+                    <img src="~/img/Home/7.jpg" alt="img">
+                </div>
+                <!-- / Top slider single slide -->
+            </div>
+        </div>
+    </section>
+    <!-- End slider  -->
+    <!-- Advance Search -->
+    <section id="aa-advance-search">
+        <div class="container">
+            <div class="aa-advance-search-area">
+                <div class="form">
+                    <div class="aa-advance-search-top">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="aa-single-advance-search">
+                                    <input type="text" placeholder="Type Your Location">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="aa-single-advance-search">
+                                    <select>
+                                        <option value="0" selected>Category</option>
+                                        <option value="1">Flat</option>
+                                        <option value="2">Land</option>
+                                        <option value="3">Plot</option>
+                                        <option value="4">Commercial</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="aa-single-advance-search">
+                                    <select>
+                                        <option value="0" selected>Type</option>
+                                        <option value="1">Flat</option>
+                                        <option value="2">Land</option>
+                                        <option value="3">Plot</option>
+                                        <option value="4">Commercial</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="aa-single-advance-search">
+                                    <select>
+                                        <option value="0" selected>Type</option>
+                                        <option value="1">Flat</option>
+                                        <option value="2">Land</option>
+                                        <option value="3">Plot</option>
+                                        <option value="4">Commercial</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="aa-single-advance-search">
+                                    <input class="aa-search-btn" type="submit" value="Search">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aa-advance-search-bottom">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="aa-single-filter-search">
+                                    <span>AREA (SQ)</span>
+                                    <span>FROM</span>
+                                    <span id="skip-value-lower" class="example-val">30.00</span>
+                                    <span>TO</span>
+                                    <span id="skip-value-upper" class="example-val">100.00</span>
+                                    <div id="aa-sqrfeet-range" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="aa-single-filter-search">
+                                    <span>PRICE ($)</span>
+                                    <span>FROM</span>
+                                    <span id="skip-value-lower2" class="example-val">30.00</span>
+                                    <span>TO</span>
+                                    <span id="skip-value-upper2" class="example-val">100.00</span>
+                                    <div id="aa-price-range" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / Advance Search -->
+    <!-- Latest property -->
+    <section id="aa-latest-property">
+        <div class="container">
+            <div class="aa-latest-property-area">
+                <div class="aa-title">
+                    <h2>Latest Properties</h2>
+                    <span></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
+                </div>
+                <div class="aa-latest-properties-content">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <article class="aa-properties-item">
+                                <a href="#" class="aa-properties-item-img">
+                                    <img src="~/img/Home/6.jpg" alt="img">
+                                </a>
+                                <div class="aa-tag for-sale">
+                                    For Sale
+                                </div>
+                                <div class="aa-properties-item-content">
+                                    <div class="aa-properties-info">
+                                        <span>5 Rooms</span>
+                                        <span>2 Beds</span>
+                                        <span>3 Baths</span>
+                                        <span>1100 SQ FT</span>
+                                    </div>
+                                    <div class="aa-properties-about">
+                                        <h3><a href="#">Appartment Title</a></h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>
+                                    </div>
+                                    <div class="aa-properties-detial">
+                                        <span class="aa-price">
+                                            $35000
+                                        </span>
+                                        <a href="#" class="aa-secondary-btn">View Details</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-4">
+                            <article class="aa-properties-item">
+                                <a href="#" class="aa-properties-item-img">
+                                    <img src="~/img/Home/6.jpg" alt="img">
+                                </a>
+                                <div class="aa-tag for-rent">
+                                    For Rent
+                                </div>
+                                <div class="aa-properties-item-content">
+                                    <div class="aa-properties-info">
+                                        <span>5 Rooms</span>
+                                        <span>2 Beds</span>
+                                        <span>3 Baths</span>
+                                        <span>1100 SQ FT</span>
+                                    </div>
+                                    <div class="aa-properties-about">
+                                        <h3><a href="#">Appartment Title</a></h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>
+                                    </div>
+                                    <div class="aa-properties-detial">
+                                        <span class="aa-price">
+                                            $11000
+                                        </span>
+                                        <a href="#" class="aa-secondary-btn">View Details</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-4">
+                            <article class="aa-properties-item">
+                                <a href="#" class="aa-properties-item-img">
+                                    <img src="~/img/Home/6.jpg" alt="img">
+                                </a>
+                                <div class="aa-tag sold-out">
+                                    Sold Out
+                                </div>
+                                <div class="aa-properties-item-content">
+                                    <div class="aa-properties-info">
+                                        <span>5 Rooms</span>
+                                        <span>2 Beds</span>
+                                        <span>3 Baths</span>
+                                        <span>1100 SQ FT</span>
+                                    </div>
+                                    <div class="aa-properties-about">
+                                        <h3><a href="#">Appartment Title</a></h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>
+                                    </div>
+                                    <div class="aa-properties-detial">
+                                        <span class="aa-price">
+                                            $15000
+                                        </span>
+                                        <a href="#" class="aa-secondary-btn">View Details</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-4">
+                            <article class="aa-properties-item">
+                                <a href="#" class="aa-properties-item-img">
+                                    <img src="~/img/Home/6.jpg" alt="img">
+                                </a>
+                                <div class="aa-tag for-sale">
+                                    For Sale
+                                </div>
+                                <div class="aa-properties-item-content">
+                                    <div class="aa-properties-info">
+                                        <span>5 Rooms</span>
+                                        <span>2 Beds</span>
+                                        <span>3 Baths</span>
+                                        <span>1100 SQ FT</span>
+                                    </div>
+                                    <div class="aa-properties-about">
+                                        <h3><a href="#">Appartment Title</a></h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>
+                                    </div>
+                                    <div class="aa-properties-detial">
+                                        <span class="aa-price">
+                                            $35000
+                                        </span>
+                                        <a href="#" class="aa-secondary-btn">View Details</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-4">
+                            <article class="aa-properties-item">
+                                <a href="#" class="aa-properties-item-img">
+                                    <img src="~/img/Home/6.jpg" alt="img">
+                                </a>
+                                <div class="aa-tag sold-out">
+                                    Sold Out
+                                </div>
+                                <div class="aa-properties-item-content">
+                                    <div class="aa-properties-info">
+                                        <span>5 Rooms</span>
+                                        <span>2 Beds</span>
+                                        <span>3 Baths</span>
+                                        <span>1100 SQ FT</span>
+                                    </div>
+                                    <div class="aa-properties-about">
+                                        <h3><a href="#">Appartment Title</a></h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>
+                                    </div>
+                                    <div class="aa-properties-detial">
+                                        <span class="aa-price">
+                                            $11000
+                                        </span>
+                                        <a href="#" class="aa-secondary-btn">View Details</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-4">
+                            <article class="aa-properties-item">
+                                <a href="#" class="aa-properties-item-img">
+                                    <img src="~/img/Home/6.jpg" alt="img">
+                                </a>
+                                <div class="aa-tag for-rent">
+                                    For Rent
+                                </div>
+                                <div class="aa-properties-item-content">
+                                    <div class="aa-properties-info">
+                                        <span>5 Rooms</span>
+                                        <span>2 Beds</span>
+                                        <span>3 Baths</span>
+                                        <span>1100 SQ FT</span>
+                                    </div>
+                                    <div class="aa-properties-about">
+                                        <h3><a href="#">Appartment Title</a></h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>
+                                    </div>
+                                    <div class="aa-properties-detial">
+                                        <span class="aa-price">
+                                            $15000
+                                        </span>
+                                        <a href="#" class="aa-secondary-btn">View Details</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / Latest property -->
+    <!-- Service section -->
+    <section id="aa-service">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-service-area">
+                        <div class="aa-title">
+                            <h2>Our Service</h2>
+                            <span></span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
+                        </div>
+                        <!-- service content -->
+                        <div class="aa-service-content">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="aa-single-service">
+                                        <div class="aa-service-icon">
+                                            <span class="fa fa-home"></span>
+                                        </div>
+                                        <div class="aa-single-service-content">
+                                            <h4><a href="#">Property Sale</a></h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="aa-single-service">
+                                        <div class="aa-service-icon">
+                                            <span class="fa fa-check"></span>
+                                        </div>
+                                        <div class="aa-single-service-content">
+                                            <h4><a href="#">Property Rent</a></h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="aa-single-service">
+                                        <div class="aa-service-icon">
+                                            <span class="fa fa-crosshairs"></span>
+                                        </div>
+                                        <div class="aa-single-service-content">
+                                            <h4><a href="#">Property Development</a></h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="aa-single-service">
+                                        <div class="aa-service-icon">
+                                            <span class="fa fa-bar-chart-o"></span>
+                                        </div>
+                                        <div class="aa-single-service-content">
+                                            <h4><a href="#">Market Analysis</a></h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores itaque dolorem at.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / Service section -->
+    <!-- Our Agent Section-->
+    <section id="aa-agents">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-agents-area">
+                        <div class="aa-title">
+                            <h2>Our Agents</h2>
+                            <span></span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
+                        </div>
+                        <!-- agents content -->
+                        <div class="aa-agents-content">
+                            <ul class="aa-agents-slider">
+                                <li>
+                                    <div class="aa-single-agents">
+                                        <div class="aa-agents-img">
+                                            <img src="~/img/Home/agent-4.png" alt="agent member image">
+                                        </div>
+                                        <div class="aa-agetns-info">
+                                            <h4><a href="#">Philip Smith</a></h4>
+                                            <span>Top Agent</span>
+                                            <div class="aa-agent-social">
+                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="aa-single-agents">
+                                        <div class="aa-agents-img">
+                                            <img src="~/img/Home/agent-4.png" alt="agent member image">
+                                        </div>
+                                        <div class="aa-agetns-info">
+                                            <h4><a href="#">Adam Barney</a></h4>
+                                            <span>Expert Agent</span>
+                                            <div class="aa-agent-social">
+                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="aa-single-agents">
+                                        <div class="aa-agents-img">
+                                            <img src="~/img/Home/agent-4.png" alt="agent member image">
+                                        </div>
+                                        <div class="aa-agetns-info">
+                                            <h4><a href="#">Paul Walker</a></h4>
+                                            <span>Director</span>
+                                            <div class="aa-agent-social">
+                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="aa-single-agents">
+                                        <div class="aa-agents-img">
+                                            <img src="~/img/Home/agent-4.png" alt="agent member image">
+                                        </div>
+                                        <div class="aa-agetns-info">
+                                            <h4><a href="#">John Smith</a></h4>
+                                            <span>Jr. Agent</span>
+                                            <div class="aa-agent-social">
+                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="aa-single-agents">
+                                        <div class="aa-agents-img">
+                                            <img src="~/img/Home/agent-4.png" alt="agent member image">
+                                        </div>
+                                        <div class="aa-agetns-info">
+                                            <h4><a href="#">Philip Smith</a></h4>
+                                            <span>Top Agent</span>
+                                            <div class="aa-agent-social">
+                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="aa-single-agents">
+                                        <div class="aa-agents-img">
+                                            <img src="~/img/Home/agent-4.png" alt="agent member image">
+                                        </div>
+                                        <div class="aa-agetns-info">
+                                            <h4><a href="#">Adam Barney</a></h4>
+                                            <span>Expert Agent</span>
+                                            <div class="aa-agent-social">
+                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="aa-single-agents">
+                                        <div class="aa-agents-img">
+                                            <img src="~/img/Home/agent-4.png" alt="agent member image">
+                                        </div>
+                                        <div class="aa-agetns-info">
+                                            <h4><a href="#">Paul Walker</a></h4>
+                                            <span>Director</span>
+                                            <div class="aa-agent-social">
+                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="aa-single-agents">
+                                        <div class="aa-agents-img">
+                                            <img src="~/img/Home/agent-4.png" alt="agent member image">
+                                        </div>
+                                        <div class="aa-agetns-info">
+                                            <h4><a href="#">John Smith</a></h4>
+                                            <span>Jr. Agent</span>
+                                            <div class="aa-agent-social">
+                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / Our Agent Section-->
+    <!-- Footer -->
+    
+    
+
+</body>
