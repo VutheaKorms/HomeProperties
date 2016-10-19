@@ -120,6 +120,7 @@
     <Compile Include="Controllers\EmailTypesControllerTest.cs" />
     <Compile Include="Controllers\MenuItemsControllerTest.cs" />
     <Compile Include="Controllers\MenusControllerTest.cs" />
+    <Compile Include="Controllers\PackageControllerTest.cs" />
     <Compile Include="Controllers\ServiceBaseController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />

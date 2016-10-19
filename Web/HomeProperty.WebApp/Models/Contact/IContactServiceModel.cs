@@ -1,4 +1,5 @@
 ﻿using HomeProperty.View;
+using HomeProperty.View.App;
 using System;
 using System.Collections.Generic;
 
@@ -14,6 +15,11 @@ namespace HomeProperty.WebApp.Models {
         int UpdateEmailType(EmailTypeView emailTypeView);
         int DeleteEmailType(EmailTypeView emailTypeView);
         #endregion Email Types
+
+        #region Package
+        string GetPackages();
+        Guid AddPackage(PackageView packageView);
+        #endregion
 
     }
 }

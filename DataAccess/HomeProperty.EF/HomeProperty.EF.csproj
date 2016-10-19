@@ -138,6 +138,8 @@
     <Compile Include="App\MenuConfig.cs" />
     <Compile Include="App\MenuItem.cs" />
     <Compile Include="App\MenuItemConfig.cs" />
+    <Compile Include="App\Package.cs" />
+    <Compile Include="App\PackageConfig.cs" />
     <Compile Include="App\Resource.cs" />
     <Compile Include="App\ResourceConfig.cs" />
     <Compile Include="BaseEntity.cs" />

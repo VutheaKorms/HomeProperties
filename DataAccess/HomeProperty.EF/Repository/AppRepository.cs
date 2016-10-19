@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using HomeProperty.App;
 using HomeProperty.DbContexts;
+using HomeProperty.EF.App;
 using HomeProperty.Settings.Util;
 using HomeProperty.View;
+using HomeProperty.View.App;
 using HomeProperty.View.QueryParameter;
 using System;
 using System.Collections.Generic;
@@ -445,6 +447,70 @@ namespace HomeProperty.Repository {
 
         #endregion MenuItems
 
+        #region Package
+        public Task<List<PackageView>> GetPackagesAsync()
+        {
+            try
+            {
+                return Task.Factory.StartNew(() => {
+                    using (var context = new MainDbContext())
+                    {
+                        return context.Packages
+                            .Where(x => x.IsActive)
+                            .Select(x => new PackageView
+                            {
+                                Id = x.Id,
+                                Name = x.Name,
+                                LanguageId = x.LanguageId,
+                                Description = x.Description,
+                                ModifiedBy = x.ModifiedBy,
+                                ModifiedDate = x.ModifiedDate,
+                                Duration = x.Duration,
+                                NumberPhoto = x.NumberPhoto,
+                                NumberProperty = x.NumberProperty,
+                                NumberVideo = x.NumberVideo,
+                                Price = x.Price,
+                                Type = x.Type,
+                                IsActive = x.IsActive,
+                            }).OrderBy(x => x.Id).ToList();
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                AddErrorLog(ex, this.ToString());
+            }
+            return null;
+        }
+
+        public Task<Guid> AddPackageAsync(PackageView packageView)
+        {
+            Mapper.CreateMap<PackageView, Package>();
+            var package = Mapper.Map<Package>(packageView);
+            try
+            {
+                return Task.Factory.StartNew(() => {
+                    using (var context = new MainDbContext())
+                    {
+                        var p = context.Packages.FirstOrDefault(x => x.Name == package.Name && x.IsActive);
+                        if (p != null)
+                            throw new ArgumentException
+                            (string.Format("Package name: {0} already exists.",
+                                package.Name));
+                        context.Packages.Add(package);
+                        context.SaveChanges();
+                        return package.Id;
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                AddErrorLog(ex, this.ToString());
+            }
+            return null;
+        }
+
+        #endregion
 
 
     }

@@ -5,7 +5,7 @@ namespace HomeProperty.Tests {
     using Settings.Constant;
     using System;
     using System.Threading.Tasks;
-
+    using View.App;
 
     [TestClass]
     public class AppRepositoryTest {
@@ -19,6 +19,29 @@ namespace HomeProperty.Tests {
             instance = new AppRepository();
         }
         #endregion Setting Up
+
+        [TestMethod]
+        public async Task TestPackagesAsync()
+        {
+            var results = await instance.GetPackagesAsync();
+            Assert.IsNotNull(results);
+            Assert.IsTrue(results.Count > 0);
+        }
+
+        [TestMethod]
+        public async Task TestAddPackageAsync()
+        {
+            var packageView = new PackageView
+            {
+                Name = "Free",
+                LanguageId = HomeProperty.Fixtures.TestData.Language.Id,
+                Description = "Free Package"
+            };
+            var packageId = await instance.AddPackageAsync(packageView);
+            Assert.IsTrue(packageId != null);
+            Assert.IsTrue(packageId.ToString() != HomeProperty.Fixtures.TestData.DefaultGuid.ToString());
+        }
+
 
         //# region Application
         //[TestMethod]

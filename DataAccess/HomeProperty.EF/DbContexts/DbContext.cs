@@ -23,6 +23,7 @@ namespace HomeProperty.DbContexts {
         public DbSet<MenuChildItem> MenuChildItems { get; set; }
         public DbSet<EmailType> EmailTypes { get; set; }
         public DbSet<Email> Emails { get; set; }
+        public DbSet<Package> Packages { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             base.OnModelCreating(modelBuilder);
@@ -35,6 +36,7 @@ namespace HomeProperty.DbContexts {
             modelBuilder.Configurations.Add(new MenuChildItemConfig());
             modelBuilder.Configurations.Add(new EmailTypeConfig());
             modelBuilder.Configurations.Add(new EmailConfig());
+            modelBuilder.Configurations.Add(new PackageConfig());
         }
 
         public static MainDbContext Create() {

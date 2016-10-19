@@ -53,6 +53,7 @@
     <Compile Include="AppValidator\MenuChildItemViewValidator.cs" />
     <Compile Include="AppValidator\MenuItemViewValidator.cs" />
     <Compile Include="AppValidator\MenuViewValidator.cs" />
+    <Compile Include="AppValidator\PckageViewValidator.cs" />
     <Compile Include="AppValidator\ResourceViewValidator.cs" />
     <Compile Include="AppValidator\LanguageViewValidator.cs" />
     <Compile Include="App\ApplicationView.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="App\MenuChildItemView.cs" />
     <Compile Include="App\MenuItemView.cs" />
     <Compile Include="App\MenuView.cs" />
+    <Compile Include="App\PackageView.cs" />
     <Compile Include="App\ResourceView.cs" />
     <Compile Include="BaseView.cs" />
     <Compile Include="ContactValidator\EmailTypeViewValidator.cs" />

@@ -60,8 +60,8 @@
       <HintPath>..\..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FluentValidation">
@@ -296,6 +296,9 @@
     <Content Include="Areas\Agent\Views\Agent\listing.html" />
     <Content Include="Areas\Rent\Views\app\listings.html" />
     <Content Include="Areas\Rent\Views\app\main.js" />
+    <Content Include="Areas\Sell\Views\Sell\index.html" />
+    <Content Include="Areas\Sell\Views\Sell\PackageComponent.js" />
+    <Content Include="Areas\Sell\Views\Sell\PackageService.js" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-dialog.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -305,8 +308,15 @@
     <Content Include="Content\font-awesome-4.3.0\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome-4.3.0\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\Home\sell-css\animations.css" />
+    <Content Include="Content\Home\sell-css\bootstrap.css" />
+    <Content Include="Content\Home\sell-css\bootstrap.min.css" />
+    <Content Include="Content\Home\sell-css\default.css" />
+    <Content Include="Content\Home\sell-css\nivo-lightbox.css" />
+    <Content Include="Content\Home\sell-css\style.css" />
     <Content Include="Content\Home\css\bootstrap.css" />
     <Content Include="Content\Home\css\font-awesome.css" />
+    <Content Include="Content\Home\css\font-awesome.min.css" />
     <Content Include="Content\Home\css\nouislider.css" />
     <Content Include="Content\Home\css\slick.css" />
     <Content Include="Content\Home\css\style.css" />
@@ -460,6 +470,7 @@
     <Content Include="img\gallery\8s.jpg" />
     <Content Include="img\gallery\9.jpg" />
     <Content Include="img\gallery\9s.jpg" />
+    <Content Include="img\Home\1.jpg" />
     <Content Include="img\Home\2.jpg" />
     <Content Include="img\Home\5.jpg" />
     <Content Include="img\Home\6.jpg" />
@@ -509,6 +520,8 @@
     <Content Include="Scripts\Angular2\Rent\main.js" />
     <Content Include="Scripts\Angular2\Rent\menu-component.js" />
     <Content Include="Scripts\Angular2\Rent\menu-service.js" />
+    <Content Include="Scripts\Angular2\Sell\PackageComponent.js" />
+    <Content Include="Scripts\Angular2\Sell\PackageService.js" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\app.language.js" />
     <Content Include="Scripts\app\angular-translate\angular-translate.min.js" />
@@ -1221,9 +1234,20 @@
     <Content Include="Scripts\app\angular2\api\templates\commands\listing" />
     <Content Include="Areas\Rent\Views\app\commands.json" />
     <Content Include="Scripts\Angular2\Rent\commands.json" />
+    <Content Include="Areas\Sell\Views\Sell\_Sell.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dataTables.editor.min.js" />
     <Content Include="Scripts\Finance\Finance.Index.js" />
+    <Content Include="Scripts\Home\sell-js\bootstrap.min.js" />
+    <Content Include="Scripts\Home\sell-js\css3-animate-it.js" />
+    <Content Include="Scripts\Home\sell-js\custom.js" />
+    <Content Include="Scripts\Home\sell-js\jquery.appear.js" />
+    <Content Include="Scripts\Home\sell-js\jquery.easing.min.js" />
+    <Content Include="Scripts\Home\sell-js\jquery.min.js" />
+    <Content Include="Scripts\Home\sell-js\jquery.scrollTo.js" />
+    <Content Include="Scripts\Home\sell-js\jquery.sticky.js" />
+    <Content Include="Scripts\Home\sell-js\nivo-lightbox.min.js" />
+    <Content Include="Scripts\Home\sell-js\stellar.js" />
     <Content Include="Scripts\Home\Home.Index.js" />
     <Content Include="Scripts\Home\js\bootstrap.js" />
     <Content Include="Scripts\Home\js\custom.js" />

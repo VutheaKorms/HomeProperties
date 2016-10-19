@@ -1,9 +1,13 @@
-﻿using System;
+﻿using HomeProperty.WebApp.Models;
+using System;
 using System.Web.Mvc;
 
 
 namespace HomeProperty.WebApp.Controllers {
     public class HomeController : BaseController {
+
+        private IContactServiceModel _contactServiceModel = ServiceModelFactory.ContactServiceModel;
+
         public ActionResult Index() {
             // For testing only 
             //var demographicServiceModel = new DemographicServiceModel();
@@ -59,6 +63,19 @@ namespace HomeProperty.WebApp.Controllers {
         [HttpGet]
         public ActionResult MainNavigationMenu() {
             return Json(ApplicationService.MainNavigationBarMenu, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult GetEmailTypes()
+        {
+            return Content(_contactServiceModel.GetEmailTypes());
+        }
+
+
+        [HttpGet]
+        public ActionResult GetPackages()
+        {
+            return Content(_contactServiceModel.GetPackages());
         }
         /// <summary>
         /// The credit score ranges

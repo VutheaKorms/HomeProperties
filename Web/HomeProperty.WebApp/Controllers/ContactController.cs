@@ -1,4 +1,5 @@
 ﻿using HomeProperty.View;
+using HomeProperty.View.App;
 using HomeProperty.WebApp.Models;
 using System;
 using System.Web.Mvc;
@@ -21,6 +22,12 @@ namespace HomeProperty.WebApp.Controllers {
             return Content(_contactServiceModel.GetEmailTypes());
         }
 
+        [HttpGet]
+        public ActionResult GetPackages()
+        {
+            return Content(_contactServiceModel.GetPackages());
+        }
+
         /// <summary>
         /// Gets an Email Type by Id.
         /// </summary>
@@ -39,6 +46,13 @@ namespace HomeProperty.WebApp.Controllers {
         [HttpPost]
         public ActionResult AddEmailType(EmailTypeView emailTypeView) {
             var id = _contactServiceModel.AddEmailType(emailTypeView);
+            return Content(id.ToString());
+        }
+
+        [HttpPost]
+        public ActionResult AddPackage(PackageView packageView)
+        {
+            var id = _contactServiceModel.AddPackage(packageView);
             return Content(id.ToString());
         }
 

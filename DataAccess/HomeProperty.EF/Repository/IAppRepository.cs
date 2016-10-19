@@ -1,4 +1,5 @@
 ﻿using HomeProperty.View;
+using HomeProperty.View.App;
 using HomeProperty.View.QueryParameter;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,12 @@ namespace HomeProperty.Repository {
 
         #endregion MenuItems
 
+        #region Package
+
+        Task<List<PackageView>> GetPackagesAsync();
+        Task<Guid> AddPackageAsync(PackageView packageView);
+
+        #endregion
 
     }
 }

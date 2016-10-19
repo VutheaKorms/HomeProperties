@@ -1,6 +1,54 @@
-﻿<h1>Listing</h1>
-<h1>dddd</h1>
-<div *ngFor="#c of menus">
-    <p>command: </p>{{c.Name}}
-</div>
+﻿<div *ngFor="#c of packages"></div>
 
+<!-- End Proerty header  -->
+<!-- Start Properties  -->
+<section id="aa-properties">
+    <section id="service" class="home-section color-dark bg-gray">
+        <div class="container marginbot-50">
+            <div class="row">
+                <!--<div class="col-lg-8 col-lg-offset-2">
+                    <div>
+                        <div class="section-heading text-center">
+                            <h2 class="h-bold">Please Choose your packages</h2>
+                            <div class="divider-header"></div>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+
+        </div>
+
+        <div class="text-center">
+            <div class="container">
+
+                <div class="row animatedParent" id="package-listing">
+                    <div class="col-xs-6 col-sm-4 col-md-4" *ngFor="#c of packages">
+                        <div class="animated rotateInDownLeft">
+                            <div class="service-box">
+                                <div class="service-icon">
+                                    <span class="fa fa fa-check-square-o"></span>
+                                </div>
+                                <div class="service-desc">
+                                    {{c.Name}}
+                                    <h5>{{c.Name}} ({{c.Price}}$)</h5>
+                                    <div class="divider-header"></div>
+                                    <p>
+                                        <b>Property: </b>{{c.NumberProperty}} ,
+                                        <b>Duration: </b>{{c.Duration}},
+                                        <b>Photos: </b>{{c.NumberPhoto}} ,
+                                        <b>Video: </b>{{c.NumberVideo}}
+                                        <b>Property Type: </b>{{c.Type}}
+                                    </p>
+                                    <a href="detail?p={{c.Id}}" class="btn btn-skin">{{c.Description}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>
+<!-- / Properties  -->

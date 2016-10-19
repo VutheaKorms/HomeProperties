@@ -1,14 +1,17 @@
 ﻿using HomeProperty.View;
+using HomeProperty.View.App;
 using System;
 using System.Collections.Generic;
 using System.Web.Script.Serialization;
 
 namespace HomeProperty.WebApp.Models {
-    public class ContactServiceModel : ServiceModelBase, IContactServiceModel {
+    public class ContactServiceModel : ServiceModelBase, IContactServiceModel
+    {
 
         #region Routes 
 
         private const string _emailTypesRoute = "Api/EmailTypes";
+        private const string _packageRoute = "Api/Packages";
 
         #endregion Routes
 
@@ -17,7 +20,8 @@ namespace HomeProperty.WebApp.Models {
         /// Get all Email Types. 
         /// </summary>
         /// <returns>The collection of Email Types as JSON string.</returns>
-        public string GetEmailTypes() {
+        public string GetEmailTypes()
+        {
             return MakeServiceRequestCall(_emailTypesRoute);
         }
 
@@ -26,7 +30,8 @@ namespace HomeProperty.WebApp.Models {
         /// </summary>
         /// <param name="id">The Email Type Id</param>
         /// <returns>The Email Type as JSON string.</returns>
-        public string GetEmailType(Guid id) {
+        public string GetEmailType(Guid id)
+        {
             return MakeServiceRequestCall(string.Format("{0}/{1}", _emailTypesRoute, id));
         }
 
@@ -34,7 +39,8 @@ namespace HomeProperty.WebApp.Models {
         /// Gets all instances of Email Types.
         /// </summary>
         /// <returns>The collection of Email Types as IEnumerable instances.</returns>
-        public IEnumerable<EmailTypeView> GetEmailTypeInstances() {
+        public IEnumerable<EmailTypeView> GetEmailTypeInstances()
+        {
             var json = MakeRequestCall(_emailTypesRoute);
             return new JavaScriptSerializer().Deserialize<IEnumerable<EmailTypeView>>(json);
         }
@@ -43,7 +49,8 @@ namespace HomeProperty.WebApp.Models {
         /// Gets an instance of Email Type View.
         /// </summary>
         /// <returns>The Email Type View instance.</returns>
-        public EmailTypeView GetEmailTypeInstance(Guid id) {
+        public EmailTypeView GetEmailTypeInstance(Guid id)
+        {
             var json = MakeServiceRequestCall(string.Format("{0}/{1}", _emailTypesRoute, id));
             return new JavaScriptSerializer().Deserialize<EmailTypeView>(json);
         }
@@ -53,7 +60,8 @@ namespace HomeProperty.WebApp.Models {
         /// </summary>
         /// <param name="emailTypeView">The instance of Email Type View.</param>
         /// <returns>The Email Type Id as Guid.</returns>
-        public Guid AddEmailType(EmailTypeView emailTypeView) {
+        public Guid AddEmailType(EmailTypeView emailTypeView)
+        {
             var json = new JavaScriptSerializer().Serialize(emailTypeView);
             if (string.IsNullOrEmpty(json))
                 throw new ArgumentNullException("The Json string of Email Type View is null.");
@@ -67,7 +75,8 @@ namespace HomeProperty.WebApp.Models {
         /// </summary>
         /// <param name="emailTypeView">The instance of email type instance.</param>
         /// <returns>The affected rows count as Integer.</returns>
-        public int UpdateEmailType(EmailTypeView emailTypeView) {
+        public int UpdateEmailType(EmailTypeView emailTypeView)
+        {
             var json = new JavaScriptSerializer().Serialize(emailTypeView);
             if (string.IsNullOrEmpty(json))
                 throw new ArgumentNullException("The Json string of Email Type View is null.");
@@ -82,7 +91,8 @@ namespace HomeProperty.WebApp.Models {
         /// </summary>
         /// <param name="emailTypeView">The email type instance.</param>
         /// <returns>The affected rows count as Integer.</returns>
-        public int DeleteEmailType(EmailTypeView emailTypeView) {
+        public int DeleteEmailType(EmailTypeView emailTypeView)
+        {
             var json = new JavaScriptSerializer().Serialize(emailTypeView);
             if (string.IsNullOrEmpty(json))
                 throw new ArgumentNullException("The Json string of Email Type View is null.");
@@ -94,5 +104,31 @@ namespace HomeProperty.WebApp.Models {
 
         #endregion Email Types
 
+        #region Package
+        /// <summary>
+        /// Get all packages. 
+        /// </summary>
+        /// <returns>The collection of Package as JSON string.</returns>
+        public string GetPackages()
+        {
+            return MakeServiceRequestCall(_packageRoute);
+        }
+
+        /// <summary>
+        /// Adds an Package.
+        /// </summary>
+        /// <param name="packageView">The instance of Package View.</param>
+        /// <returns>The Package Id as Guid.</returns>
+        public Guid AddPackage(PackageView packageView)
+        {
+            var json = new JavaScriptSerializer().Serialize(packageView);
+            if (string.IsNullOrEmpty(json))
+                throw new ArgumentNullException("The Json string of Package View is null.");
+
+            var packageId = MakeRequestCall(_packageRoute, json, Enum.ApiServiceType.Post);
+            return new Guid(packageId.ToString());
+        }
+
+        #endregion
     }
 }
